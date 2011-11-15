@@ -102,7 +102,7 @@ namespace DbLinq.Data.Linq.Implementation
                 // if already registered for insert/update, then this is an error
                 case EntityState.ToInsert:
                 case EntityState.ToWatch:
-                    throw new InvalidOperationException();
+                    break;
                 // whenever the object is registered for deletion, the fact of
                 // registering it for insertion sets it back to watch
                 case EntityState.ToDelete:
@@ -145,7 +145,7 @@ namespace DbLinq.Data.Linq.Implementation
                 // watched entities should not be registered again
                 case EntityState.ToWatch:
                 case EntityState.ToDelete:
-                    throw new InvalidOperationException();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
                 }
@@ -183,7 +183,7 @@ namespace DbLinq.Data.Linq.Implementation
                     entitiesByKey.Remove(entityTrack.IdentityKey);
                     break;
                 case EntityState.ToDelete:
-                    throw new InvalidOperationException();
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
                 }
