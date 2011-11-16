@@ -126,8 +126,8 @@ namespace DbLinq.Data.Linq.Implementation
             if (entityTrack == null)
             {
                 entityTrack = FindByIdentity(identityKey);
-                if (entityTrack != null)
-                    throw new System.Data.Linq.DuplicateKeyException(entity);
+                //if (entityTrack != null)
+                //    throw new System.Data.Linq.DuplicateKeyException(entity);
                 entityTrack = new EntityTrack(entity, EntityState.ToWatch) { IdentityKey = identityKey };
                 entities.Add(entityTrack);
                 entitiesByKey[identityKey] = entityTrack;
