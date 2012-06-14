@@ -14,6 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>..\DbLinq.snk</AssemblyOriginatorKeyFile>
+    <ReleaseVersion>0.0.1.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -47,17 +48,12 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core">
-    </Reference>
+    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Linq">
-    </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\DbLinq.ProductInfo.cs">
-      <Link>Properties\DbLinq.ProductInfo.cs</Link>
-    </Compile>
     <Compile Include="Data\Linq\ChangeSet.cs" />
     <Compile Include="Data\Linq\Database\IDatabaseContext.cs" />
     <Compile Include="Data\Linq\Database\ITransactionalCommand.cs" />
@@ -289,14 +285,17 @@
     <Compile Include="Vendor\Implementation\SchemaLoader.cs" />
     <Compile Include="Vendor\Implementation\Vendor.cs" />
     <Compile Include="Vendor\Implementation\SqlProvider.cs" />
+    <Compile Include="..\DbLinq.ProductInfo.cs">
+      <Link>Properties\DbLinq.ProductInfo.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\DbLinq.snk">
-      <Link>Properties\DbLinq.snk</Link>
-    </None>
     <None Include="Schema\Dbml\DbmlSchema.bat" />
     <EmbeddedResource Include="Schema\Dbml\DbmlSchema.xsd">
     </EmbeddedResource>
+    <None Include="..\DbLinq.snk">
+      <Link>Properties\DbLinq.snk</Link>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Data\Linq\Sugar\Notes.txt" />
